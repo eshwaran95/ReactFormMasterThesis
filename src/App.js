@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
+import { Row, Col,Container, Button, Navbar, NavItem, NavbarToggler,NavbarBrand, Nav } from 'reactstrap';
+
+
 
 function App() {
+
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggle = () => setIsOpen(!isOpen);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="sm">
+   <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <p>Option 1</p>
+            </NavItem>
+            <NavItem>
+            <p>Option 2</p>
+
+            </NavItem>
+            <NavItem>
+            <p>Option 3</p>
+
+            </NavItem>
+            
+          </Nav>
+     
+        
+      </Navbar>
+   <Button variant="contained">Next</Button>
+    </Container>
   );
 }
 
