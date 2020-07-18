@@ -1,28 +1,52 @@
 //import react for component functionality
 import React from 'react';
-import { Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, Jumbotron} from 'reactstrap';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
-//Name of the Component
-function Introduction() {
-     //javascript functionality for example buttons go here(outside of return, but inside of function)
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 2000,
+  },
+  media: {
+    height: 300,
+  },
+});
 
-return(
-//All reactstrap components and HTML elements inside the one div
-<div>
-<Jumbotron>
-    <h1 className="display-3">Hello, world!</h1>
-        <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr className="my-2" />
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p className="lead">
-          <Button color="primary">Learn More</Button>
-        </p>
-    </Jumbotron>
-    
-</div>
-);
+export default function MediaCard() {
+  const classes = useStyles();
+
+  return (
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image="https://picsum.photos/200/300"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+           Introduction to  Usability Engineering
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
+  );
 }
-
-//export function, to use it in App.js 
-export default Introduction;

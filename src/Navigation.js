@@ -17,55 +17,91 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { AppBar } from '@material-ui/core';
-
 
 export default function Navigation() {
+
+
+  const navHeader = {
+    backgroundColor: 'white',
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    right: '0',
+    height: '80px',
+    display: 'flex',
+    alignItems: 'center',
+    boxShadow: '0 0 25px 0 black'
+
+  }
+  const navStyle = {
+    listStyleType: 'none',
+    margin: '20px',
+    padding: '0',
+    overflow: 'hidden',
+  }
+
+  const navItem = {
+    float: 'left',
+    padding: '15px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    display: 'inline-block',
+    fontWeight: '500',
+    borderLeft: '1px solid grey',
+    
+  }
+  const navLink = {
+    color: 'black',
+    textDecoration: 'none'
+  }
+
+
     return (
+    
       <div>
   <Router>
         <div >
-          <nav position="sticky" color="default">
-            <ul>
-              <li>
-                <Link to="/">Introduction</Link>
+
+      <nav style={navHeader}>
+            <ul style={navStyle}>
+              <li style={navItem}>
+                <Link style={navLink} to="/introduction">Introduction</Link>
               </li>
-              <li>
-                <Link to="/eligibilityCriteria">Eligibility Criteria</Link>
+              <li style={navItem}>
+                <Link style={navLink}to="/eligibilityCriteria">Eligibility Criteria</Link>
               </li>
-              <li>
-                <Link to="/foreseeableHazards">Foreseeable Hazards</Link>
+              <li style={navItem}>
+                <Link style={navLink}to="/foreseeableHazards">Foreseeable Hazards</Link>
               </li>
-              <li>
-                <Link to="/knowHazard">Know Hazard</Link>
+              <li style={navItem}>
+                <Link style={navLink}to="/KnowHazard">Know Hazard</Link>
               </li>
-              <li>
-                <Link to="/personaBuilder">Persona Builder</Link>
+              <li style={navItem}>
+                <Link style={navLink}to="/personaBuilder">Persona Builder</Link>
               </li>
-              <li>
-                <Link to="/questionaries">Questionaries</Link>
+              <li style={navItem}>
+                <Link style={navLink}to="/questionaries">Questionaries</Link>
               </li>
-              <li>
-                <Link to="/systemUsabilityScale">System Usability Scale</Link>
+              <li style={navItem}>
+                <Link style={navLink} to="/systemUsabilityScale">System Usability Scale</Link>
               </li>
-              <li>
-                <Link to="/testIntroduction">Test Introduction</Link>
+              <li style={navItem}>
+                <Link style={navLink} to="/testIntroduction">Test Introduction</Link>
               </li>
-              <li>
-                <Link to="/uiSaftyAndPotentialError">uiSaftyAndPotentialError</Link>
+              <li style={navItem}>
+                <Link style={navLink} to="/uiSaftyAndPotentialError">UI Safty and Potential Error</Link>
               </li>
-              <li>
-                <Link to="/uiSpecifications">UI Specifications</Link>
+              <li style={navItem}>
+                <Link style={navLink} to="/uiSpecifications">UI Specifications</Link>
               </li>
-              <li>
-                <Link to="/useScenario">Use Scenario</Link>
+              <li style={navItem}>
+                <Link style={navLink} to="/useScenario">Use Scenario</Link>
               </li>
-              <li>
-                <Link to="/userEnvironment">User Environment</Link>
+              <li style={navItem}>
+                <Link style={navLink} to="/userEnvironment">User Environment</Link>
               </li>
             </ul>
           </nav>
-  
          
           <Switch>
             <Route path="/introduction">
@@ -107,6 +143,26 @@ export default function Navigation() {
           </Switch>
         </div>
       </Router>
+
     </div>
     );
   }
+
+  /*
+      <AppBar position="static">
+  <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+    <Tab label="Item One" {...a11yProps(0)} />
+    <Tab label="Item Two" {...a11yProps(1)} />
+    <Tab label="Item Three" {...a11yProps(2)} />
+  </Tabs>
+</AppBar>
+<TabPanel value={value} index={0}>
+  Item One
+</TabPanel>
+<TabPanel value={value} index={1}>
+  Item Two
+</TabPanel>
+<TabPanel value={value} index={2}>
+  Item Three
+</TabPanel>
+*/
