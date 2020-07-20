@@ -115,28 +115,24 @@ export default function SimpleTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Introduction to Persona" {...a11yProps(0)} />
-          <Tab label="Example of a Persona" {...a11yProps(1)} />
-          <Tab label="Fill a Persona" {...a11yProps(2)} />
+          <Tab label="Introduction to Known Hazard" {...a11yProps(0)} />
+          <Tab label="Example of a Known Hzard" {...a11yProps(1)} />
+          <Tab label="Fill a Known Hazard table" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
       <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-        Personas
+         Known Hazard
         </Typography>
         <Typography variant="h5" component="h2">
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-        The purpose of personas is to create reliable and realistic representations of your key audience segments for reference. These representations should be based on qualitative and some quantitative user research and web analytics. Remember, your personas are only as good as the research behind them. Effective personas:
+        Hazard is 
         </Typography>
         <Typography variant="body2" component="p">
-Represent a major user group for your website/applicaiton
-Express and focus on the major needs and expectations of the most important user groups
-Give a clear picture of the user's expectations and how they're likely to use the site
-Aid in uncovering universal features and functionality
-Describe real people with backgrounds, goals, and values
+        List all known hazards; hazardous situations and use problems from the post-market surveillance of predicate devices, or the device after market release here or reference to an external document (e.g. “Risk table”).
           <br />
           {'"a benevolent smile"'}
         </Typography>
@@ -178,88 +174,39 @@ Describe real people with backgrounds, goals, and values
       <div>
         <TextField
           id="standard-full-width"
-          label="Label"
+          label="ID"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="Ex: 1"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
-        />
-        <TextField
-          label="None"
-          id="margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-        />
-        <TextField
-          label="Dense"
-          id="margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-        />
-        <TextField
-          label="Normal"
-          id="margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
         />
       </div>
       <div>
         <TextField
           id="filled-full-width"
-          label="Label"
+          label="Product"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="Theraphy Builder"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
-          variant="filled"
-        />
-        <TextField
-          label="None"
-          id="filled-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="filled"
-        />
-        <TextField
-          label="Dense"
-          id="filled-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="filled"
-        />
-        <TextField
-          label="Normal"
-          id="filled-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
           variant="filled"
         />
       </div>
       <div>
         <TextField
           id="outlined-full-width"
-          label="Label"
+          label="Source"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="Ex: Customer Complaints!"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -267,30 +214,34 @@ Describe real people with backgrounds, goals, and values
           }}
           variant="outlined"
         />
+      </div>
+      <div>
         <TextField
-          label="None"
-          id="outlined-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="outlined"
-        />
-        <TextField
-          label="Dense"
-          id="outlined-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="outlined"
-        />
-        <TextField
-          label="Normal"
-          id="outlined-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
+          id="outlined-full-width"
+          label="Hazards, hazardous situations, use problems"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="Ex:Hazard-Amount of Medication & Hazard Situation: Too high dose"
+          fullWidth
           margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
+        />
+      </div>
+      <div>
+        <TextField
+          id="outlined-full-width"
+          label="Date"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="Ex:2020-05-01"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
           variant="outlined"
         />
       </div>
