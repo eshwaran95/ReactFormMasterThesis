@@ -18,7 +18,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-
+import {
+  BrowserRouter as Router,
+  
+  Route,
+  Link
+} from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -76,11 +81,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  // eslint-disable-next-line no-undef
+  createData('List one user group per line','Background','Abilities','Tasks done using Theraphy Builder'),
+  createData('Physician','JobTitle','Education Required','Medical Condition'),
+  createData('Nurse','Age','Qualification', 'Knowledge'),
+  createData('Technician','Sex','Experience With Medical Device',' Dialog Flow w.r.t MedicalContext'),
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -124,18 +129,30 @@ export default function SimpleTabs() {
       <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
+        Personas
         </Typography>
         <Typography variant="h5" component="h2">
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+        The purpose of personas is to create reliable and realistic representations of your key audience segments for reference. These representations should be based on qualitative and some quantitative user research and web analytics. Remember, your personas are only as good as the research behind them. Effective personas:
         </Typography>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
+Represent a major user group for your website/applicaiton
+Express and focus on the major needs and expectations of the most important user groups
+Give a clear picture of the user's expectations and how they're likely to use the site
+Aid in uncovering universal features and functionality
+Describe real people with backgrounds, goals, and values
           <br />
           {'"a benevolent smile"'}
         </Typography>
+        <Link to="/personaBuilder">
+     <button type="button">
+          Next
+     </button>
+ </Link>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
@@ -147,11 +164,10 @@ export default function SimpleTabs() {
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            <StyledTableCell>Title of user group</StyledTableCell>
+            <StyledTableCell align="right">Demographic data</StyledTableCell>
+            <StyledTableCell align="right">Expected/Intended qualification,job experience, skills</StyledTableCell>
+            <StyledTableCell align="right">Anticipated tasks and their frequency (related to the medical device)</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>

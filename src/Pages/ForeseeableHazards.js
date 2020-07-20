@@ -77,11 +77,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  // eslint-disable-next-line no-undef
+  createData('List one user group per line','Physician,Nurse,Technician,Laypersons'),
+  createData('Background', 'JobTitle,Age,Sex,Medical Condition'),
+  createData('Abilities','Education Required, Qualification, Knowledge, Experience With Medical Device'),
+  createData('Tasks done using Theraphy Builder','Ebook Advice,Therapist Dialog Box,MedicalContext'),
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -125,15 +125,19 @@ export default function SimpleTabs() {
       <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
+        Personas
         </Typography>
         <Typography variant="h5" component="h2">
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+        The purpose of personas is to create reliable and realistic representations of your key audience segments for reference. These representations should be based on qualitative and some quantitative user research and web analytics. Remember, your personas are only as good as the research behind them. Effective personas:
         </Typography>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
+Represent a major user group for your website/applicaiton
+Express and focus on the major needs and expectations of the most important user groups
+Give a clear picture of the user's expectations and how they're likely to use the site
+Aid in uncovering universal features and functionality
+Describe real people with backgrounds, goals, and values
           <br />
           {'"a benevolent smile"'}
         </Typography>
@@ -148,11 +152,10 @@ export default function SimpleTabs() {
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            <StyledTableCell>Title of user group</StyledTableCell>
+            <StyledTableCell align="right">Demographic data</StyledTableCell>
+            <StyledTableCell align="right">Expected/Intended qualification,job experience, skills</StyledTableCell>
+            <StyledTableCell align="right">Anticipated tasks and their frequency (related to the medical device)</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
