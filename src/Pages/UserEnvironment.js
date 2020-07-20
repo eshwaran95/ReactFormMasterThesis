@@ -115,28 +115,24 @@ export default function UserEnvironment() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Introduction to Persona" {...a11yProps(0)} />
-          <Tab label="Example of a Persona" {...a11yProps(1)} />
-          <Tab label="Fill a Persona" {...a11yProps(2)} />
+          <Tab label="Introduction to Use Environment" {...a11yProps(0)} />
+          <Tab label="Example of a Use Environment" {...a11yProps(1)} />
+          <Tab label="Fill a Use Environment Table" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
       <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-        Personas
+        Use Environment
         </Typography>
         <Typography variant="h5" component="h2">
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-        The purpose of personas is to create reliable and realistic representations of your key audience segments for reference. These representations should be based on qualitative and some quantitative user research and web analytics. Remember, your personas are only as good as the research behind them. Effective personas:
+        Use Environment helps you to understand the situation the user is using the Applicaiton as its a major factor affecting in the user experience or usability of the Product.
         </Typography>
         <Typography variant="body2" component="p">
-Represent a major user group for your website/applicaiton
-Express and focus on the major needs and expectations of the most important user groups
-Give a clear picture of the user's expectations and how they're likely to use the site
-Aid in uncovering universal features and functionality
-Describe real people with backgrounds, goals, and values
+Some of the main factors of the Use Environment are Lighting,Sound or noise,Social environment like family or colleagues,Medium of intraction example: Gloves,goggles etc,Furnishing example sofa or work table,Distraction like TV or other Medical device, and finally Other Sterile environment.
           <br />
           {'"a benevolent smile"'}
         </Typography>
@@ -151,10 +147,11 @@ Describe real people with backgrounds, goals, and values
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Title of user group</StyledTableCell>
-            <StyledTableCell align="right">Demographic data</StyledTableCell>
-            <StyledTableCell align="right">Expected/Intended qualification,job experience, skills</StyledTableCell>
-            <StyledTableCell align="right">Anticipated tasks and their frequency (related to the medical device)</StyledTableCell>
+            <StyledTableCell>UI-characteristic related to safety/use errors (primary operating functions)</StyledTableCell>
+            <StyledTableCell align="right">Possible use error with respect to UI-characteristic</StyledTableCell>
+            <StyledTableCell align="right">Root cause</StyledTableCell>
+            <StyledTableCell align="right">Hazardous situation</StyledTableCell>
+            <StyledTableCell align="right">Harm and severity level (SL)</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>

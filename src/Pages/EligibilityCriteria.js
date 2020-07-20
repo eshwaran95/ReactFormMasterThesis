@@ -19,19 +19,19 @@ export default function FormControlLabelPosition() {
         <FormControlLabel
           value="start"
           control={<Checkbox color="primary" />}
-          label="You are taking this Test alone"
+          label="You are taking this Test alone!"
           labelPlacement="start"
         />
         <FormControlLabel
           value="bottom"
           control={<Checkbox color="primary" />}
-          label="you are above 18yrs old and not a minor "
+          label="you are above 14yrs old? "
           labelPlacement="bottom"
         />
         <FormControlLabel
           value="end"
           control={<Checkbox color="primary" />}
-          label="You agree to share your data with us"
+          label="You agree to share your data with us!"
           labelPlacement="end"
         />
       </FormGroup>
