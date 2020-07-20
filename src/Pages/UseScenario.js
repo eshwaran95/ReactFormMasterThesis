@@ -18,6 +18,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 
 function TabPanel(props) {
@@ -77,10 +79,8 @@ function createData(name, calories, fat, carbs, protein) {
 
 const rows = [
   // eslint-disable-next-line no-undef
-  createData('List one user group per line','Physician,Nurse,Technician,Laypersons'),
-  createData('Background', 'JobTitle,Age,Sex,Medical Condition'),
-  createData('Abilities','Education Required, Qualification, Knowledge, Experience With Medical Device'),
-  createData('Tasks done using Theraphy Builder','Ebook Advice,Therapist Dialog Box,MedicalContext'),
+  createData('Measurning Depression level','Physician,Nurse','Hospital or patients home','Device is ready for use','Welcome dialog is displayed','Switch on the device','Non-Hazard situation'),
+  
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
   },
   table: {
-    minWidth: 700,
+    minWidth: 2000,
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -149,10 +149,13 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Title of user group</StyledTableCell>
-            <StyledTableCell align="right">Demographic data</StyledTableCell>
-            <StyledTableCell align="right">Expected/Intended qualification,job experience, skills</StyledTableCell>
-            <StyledTableCell align="right">Anticipated tasks and their frequency (related to the medical device)</StyledTableCell>
+            <StyledTableCell>Title of Use scenario</StyledTableCell>
+            <StyledTableCell align="right">User group(s)</StyledTableCell>
+            <StyledTableCell align="right">Use environment</StyledTableCell>
+            <StyledTableCell align="right">Pre-condition (Where does the task start?)</StyledTableCell>
+            <StyledTableCell align="right">Post-condition (intended outcome)</StyledTableCell>
+            <StyledTableCell align="right">Tasks</StyledTableCell>
+            <StyledTableCell align="right">Hazard-related / not hazard-related</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -165,6 +168,8 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
               <StyledTableCell align="right">{row.fat}</StyledTableCell>
               <StyledTableCell align="right">{row.carbs}</StyledTableCell>
               <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+              <StyledTableCell align="right">{row.protein}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
@@ -174,90 +179,41 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <TabPanel value={value} index={2}>
       <div className={classes.root}>
       <div>
-        <TextField
+      <TextField
           id="standard-full-width"
-          label="Label"
+          label="ID"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="Ex: 1"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
-        />
-        <TextField
-          label="None"
-          id="margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-        />
-        <TextField
-          label="Dense"
-          id="margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-        />
-        <TextField
-          label="Normal"
-          id="margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
         />
       </div>
       <div>
         <TextField
           id="filled-full-width"
-          label="Label"
+          label="Title of Use Scenario"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="E.g:Measurmeng Depression level"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
-          variant="filled"
-        />
-        <TextField
-          label="None"
-          id="filled-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="filled"
-        />
-        <TextField
-          label="Dense"
-          id="filled-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="filled"
-        />
-        <TextField
-          label="Normal"
-          id="filled-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
           variant="filled"
         />
       </div>
       <div>
         <TextField
           id="outlined-full-width"
-          label="Label"
+          label="Use Group"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="E.g: Physician"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -265,33 +221,79 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
           }}
           variant="outlined"
         />
+      </div>
+      <div>
         <TextField
-          label="None"
-          id="outlined-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="outlined"
-        />
-        <TextField
-          label="Dense"
-          id="outlined-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="outlined"
-        />
-        <TextField
-          label="Normal"
-          id="outlined-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
+          id="outlined-full-width"
+          label="Use Environment"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="Patients Home"
+          fullWidth
           margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
           variant="outlined"
         />
       </div>
+      <div>
+        <TextField
+          id="outlined-full-width"
+          label="Pre-condition (Where does the task start?)"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g: After launching the applicaiton"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
+        />
+      </div>
+      <div>
+        <TextField
+          id="outlined-full-width"
+          label="Post-condition (intended outcome)"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g: Welcome page or dialog should be displaied"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
+        />
+      </div>
+      <div>
+        <TextField
+          id="outlined-full-width"
+          label="Tasks"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g: Switching on the device "
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
+        />
+      </div>
+      <FormControlLabel
+          value="start"
+          control={<Checkbox color="primary" />}
+          label="Hazard-related "
+          labelPlacement="start"
+        />
+              <FormControlLabel
+          value="start"
+          control={<Checkbox color="primary" />}
+          label="Not-Hazard-related "
+          labelPlacement="start"
+        />
     </div>
       </TabPanel>
     </div>
