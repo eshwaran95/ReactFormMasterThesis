@@ -11,6 +11,19 @@ import UiSaftyAndPotentialError from './Pages/UiSaftyAndPotentialError';
 import UiSpecifications from './Pages/UiSpecifications';
 import UseScenario from './Pages/UseScenario';
 import UserEnvironment from './Pages/UserEnvironment';
+import clsx from 'clsx';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ListItem from '@material-ui/core/ListItem';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,151 +31,222 @@ import {
   Link
 } from "react-router-dom";
 
-export default function Navigation() {
+const drawerWidth = 240;
 
-
-  const navHeader = {
-    backgroundColor: 'white',
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    right: '0',
-    height: '80px',
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
+  appBar: {
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  hide: {
+    display: 'none',
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    boxShadow: '0 0 25px 0 black'
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end',
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  },
+}));
 
-  }
-  const navStyle = {
-    listStyleType: 'none',
-    margin: '20px',
-    padding: '0',
-    overflow: 'hidden',
-  }
-
-  const navItem = {
-    float: 'left',
-    padding: '15px',
-    textAlign: 'center',
-    textDecoration: 'none',
-    display: 'inline-block',
-    fontWeight: '500',
-    borderLeft: '1px solid grey',
-    
-  }
-  const navLink = {
-    color: 'black',
-    textDecoration: 'none'
-  }
+export default function PersistentDrawerLeft() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
 
-    return (
-    
-      <div>
-  <Router>
-        <div >
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
 
-      <nav style={navHeader}>
-            <ul style={navStyle}>
-              <li style={navItem}>
-                <Link style={navLink} to="/introduction">Introduction</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink}to="/eligibilityCriteria">Eligibility Criteria</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink}to="/foreseeableHazards">Foreseeable Hazards</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink}to="/KnowHazard">Know Hazard</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink}to="/personaBuilder">Persona Builder</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink}to="/questionaries">Questionaries</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink} to="/systemUsabilityScale">System Usability Scale</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink} to="/testIntroduction">Test Introduction</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink} to="/uiSaftyAndPotentialError">UI Safty and Potential Error</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink} to="/uiSpecifications">UI Specifications</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink} to="/useScenario">Use Scenario</Link>
-              </li>
-              <li style={navItem}>
-                <Link style={navLink} to="/userEnvironment">User Environment</Link>
-              </li>
-            </ul>
-          </nav>
-         
-          <Switch>
-            <Route path="/introduction">
-              <Introduction />
-            </Route>
-            <Route path="/eligibilityCriteria">
-              <EligibilityCriteria />
-            </Route>
-            <Route path="/foreseeableHazards">
-              <ForeseeableHazards />
-            </Route>
-            <Route path="/knowHazard">
-              <KnowHazard />
-            </Route>
-            <Route path="/personaBuilder">
-              <PersonaBuilder />
-            </Route>
-            <Route path="/questionaries">
-              <Questionaries />
-            </Route>
-            <Route path="/systemUsabilityScale">
-              <SystemUsabilityScale />
-            </Route>
-            <Route path="/testIntroduction">
-              <TestIntroduction />
-            </Route>
-            <Route path="/uiSaftyAndPotentialError">
-              <UiSaftyAndPotentialError />
-            </Route>
-            <Route path="/uiSpecifications">
-              <UiSpecifications />
-            </Route>
-            <Route path="/useScenario">
-              <UseScenario />
-            </Route>
-            <Route path="/userEnvironment">
-              <UserEnvironment />
-            </Route>
-          </Switch>
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            className={clsx(classes.menuButton, open && classes.hide)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap>
+            Usability Engineering
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Router>
+      <Drawer
+        className={classes.drawer}
+        variant="persistent"
+        anchor="left"
+        open={open}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <div className={classes.drawerHeader}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
         </div>
-      </Router>
+    
+     
+        <ListItem button onClick={handleClose}>
+          <NavigateNextIcon />
+        <Link to="/introduction">Introduction</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/eligibilityCriteria">Eligibility Criteria</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/foreseeableHazards">Foreseeable Hazards</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/KnowHazard">Know Hazard</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/questionaries">Questionaries</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/personaBuilder">Persona Builder</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/systemUsabilityScale">System Usability Scale</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/testIntroduction">Test Introduction</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/uiSaftyAndPotentialError">UI Safty and Potential Error</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/uiSpecifications">UI Specifications</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/useScenario">Use Scenario</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/userEnvironment">User Environment</Link>
+        </ListItem>
+      </Drawer>
+      <Switch>
+        <Route path="/introduction">
+          <Introduction />
+        </Route>
+        <Route path="/eligibilityCriteria">
+          <EligibilityCriteria />
+        </Route>
+        <Route path="/foreseeableHazards">
+          <ForeseeableHazards />
+        </Route>
+        <Route path="/knowHazard">
+          <KnowHazard />
+        </Route>
+        <Route path="/personaBuilder">
+          <PersonaBuilder />
+        </Route>
+        <Route path="/questionaries">
+          <Questionaries />
+        </Route>
+        <Route path="/systemUsabilityScale">
+          <SystemUsabilityScale />
+        </Route>
+        <Route path="/testIntroduction">
+          <TestIntroduction />
+        </Route>
+        <Route path="/uiSaftyAndPotentialError">
+          <UiSaftyAndPotentialError />
+        </Route>
+        <Route path="/uiSpecifications">
+          <UiSpecifications />
+        </Route>
+        <Route path="/useScenario">
+          <UseScenario />
+        </Route>
+        <Route path="/userEnvironment">
+          <UserEnvironment />
+        </Route>
+          </Switch>
+          </Router>
+
+      <main
+        className={clsx(classes.content, {
+          [classes.contentShift]: open,
+        })}
+      >
+        <div className={classes.drawerHeader} />
+        
+      </main>
 
     </div>
-    );
-  }
-
-  /*
-      <AppBar position="static">
-  <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-    <Tab label="Item One" {...a11yProps(0)} />
-    <Tab label="Item Two" {...a11yProps(1)} />
-    <Tab label="Item Three" {...a11yProps(2)} />
-  </Tabs>
-</AppBar>
-<TabPanel value={value} index={0}>
-  Item One
-</TabPanel>
-<TabPanel value={value} index={1}>
-  Item Two
-</TabPanel>
-<TabPanel value={value} index={2}>
-  Item Three
-</TabPanel>
-*/
+  );
+}
