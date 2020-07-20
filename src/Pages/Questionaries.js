@@ -142,9 +142,9 @@ export default function Questionaries() {
 <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Introduction to Persona" {...a11yProps(0)} />
-          <Tab label="Example of a Persona" {...a11yProps(1)} />
-          <Tab label="Fill a Persona" {...a11yProps(2)} />
+          <Tab label="Pre-session interview" {...a11yProps(0)} />
+          <Tab label="Questions" {...a11yProps(1)} />
+          <Tab label="Debriefing/Post-Session Interview" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
