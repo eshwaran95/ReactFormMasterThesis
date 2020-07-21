@@ -18,7 +18,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-
+import {
+  BrowserRouter as Router,
+  
+  Route,
+  Link
+} from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -247,6 +252,16 @@ export default function SimpleTabs() {
       </div>
     </div>
       </TabPanel>
+      <Link to="/UiSaftyAndPotentialError">
+    <button type="button">
+         Back
+    </button>
+</Link>
+<Link to="/ForeseeableHazard">
+     <button type="button">
+          Next
+     </button>
+ </Link>
     </div>
   );
 }

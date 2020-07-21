@@ -106,7 +106,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function SimpleTabs() {
+export default function PersonaBuilder() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -145,17 +145,20 @@ Describe real people with backgrounds, goals, and values
           <br />
           {'"a benevolent smile"'}
         </Typography>
-        <Link to="/personaBuilder">
+      </CardContent>
+      <CardActions>
+
+        <Link to="/EligibilityCriteria">
+     <button type="button">
+          Back
+     </button>
+ </Link>
+        <Button size="small">Learn More</Button>
+        <Link to="/UseEnvironment">
      <button type="button">
           Next
      </button>
  </Link>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
       </TabPanel>
@@ -191,10 +194,10 @@ Describe real people with backgrounds, goals, and values
       <div>
         <TextField
           id="standard-full-width"
-          label="Label"
+          label="Title of user group"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="Nurse,Physician,Professors"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -202,33 +205,46 @@ Describe real people with backgrounds, goals, and values
           }}
         />
         <TextField
-          label="None"
-          id="margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-        />
-        <TextField
-          label="Dense"
-          id="margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-        />
-        <TextField
-          label="Normal"
-          id="margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
+          id="standard-full-width"
+          label="Demographic data"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g:Job Title,Sex,Age"
+          fullWidth
           margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+        <TextField
+          id="standard-full-width"
+          label="Expected/Intended qualification,job experience, skills"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="Knowledge for using the App"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
         />
       </div>
       <div>
+      <TextField
+          id="standard-full-width"
+          label="Anticipated tasks and their frequency (related to the medical device)"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g:Turn on the app OR Any Action with Theraphy Builder"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
         <TextField
-          id="filled-full-width"
-          label="Label"
+          id="standard-full-width"
+          label="Title of user group"
           style={{ margin: 8 }}
           placeholder="Placeholder"
           helperText="Full width!"
@@ -237,75 +253,7 @@ Describe real people with backgrounds, goals, and values
           InputLabelProps={{
             shrink: true,
           }}
-          variant="filled"
-        />
-        <TextField
-          label="None"
-          id="filled-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="filled"
-        />
-        <TextField
-          label="Dense"
-          id="filled-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="filled"
-        />
-        <TextField
-          label="Normal"
-          id="filled-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
-          variant="filled"
-        />
-      </div>
-      <div>
-        <TextField
-          id="outlined-full-width"
-          label="Label"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Full width!"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-        <TextField
-          label="None"
-          id="outlined-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="outlined"
-        />
-        <TextField
-          label="Dense"
-          id="outlined-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="outlined"
-        />
-        <TextField
-          label="Normal"
-          id="outlined-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
-          variant="outlined"
-        />
+        />    
       </div>
     </div>
       </TabPanel>

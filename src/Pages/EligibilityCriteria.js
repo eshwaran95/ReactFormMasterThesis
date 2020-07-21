@@ -4,9 +4,41 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
+
+import CardActions from '@material-ui/core/CardActions';
+import {
+  BrowserRouter as Router,
+  
+  Route,
+  Link
+} from "react-router-dom";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  table: {
+    minWidth: 700,
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: '25ch',
+  }
+
+}));
 
 export default function FormControlLabelPosition() {
+  const classes = useStyles();
   return (
+    <div className={classes.root}>
+    <Card className={classes.root}>
+    <CardContent>
     <FormControl component="fieldset">
       <FormLabel component="legend">Eligilibity Criteria </FormLabel>
       <FormGroup aria-label="position" row>
@@ -36,5 +68,20 @@ export default function FormControlLabelPosition() {
         />
       </FormGroup>
     </FormControl>
+    </CardContent>
+     <CardActions>
+     <Link to="/personaBuilder">
+    <button type="button">
+         Next
+    </button>
+</Link>
+<Link to="/Introduction">
+     <button type="button">
+          Back
+     </button>
+ </Link>
+ </CardActions>
+    </Card>
+    </div>
   );
 }
