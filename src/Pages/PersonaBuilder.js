@@ -82,10 +82,10 @@ function createData(name, calories, fat, carbs, protein) {
 
 const rows = [
   // eslint-disable-next-line no-undef
-  createData('List one user group per line','Background','Abilities','Tasks done using Theraphy Builder'),
-  createData('Physician','JobTitle','Education Required','Medical Condition'),
-  createData('Nurse','Age','Qualification', 'Knowledge'),
-  createData('Technician','Sex','Experience With Medical Device',' Dialog Flow w.r.t MedicalContext'),
+  createData('E.g:List one user group per line','Background','Abilities','Tasks done using Theraphy Builder'),
+  createData('E.g:Physician','JobTitle','Education Required','Medical Condition'),
+  createData('E.g:Nurse','Age','Qualification', 'Knowledge'),
+  createData('E.g:Technician','Sex','Experience With Medical Device',' Dialog Flow w.r.t MedicalContext'),
 ];
 
 const useStyles = makeStyles((theme) => ({
