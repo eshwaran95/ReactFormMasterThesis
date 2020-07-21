@@ -11,27 +11,27 @@ export default function FormControlLabelPosition() {
       <FormLabel component="legend">Eligilibity Criteria </FormLabel>
       <FormGroup aria-label="position" row>
         <FormControlLabel
-          value="top"
+          value="end"
           control={<Checkbox color="primary" />}
-          label="You are not a disabled person"
-          labelPlacement="top"
-        />
-        <FormControlLabel
-          value="start"
-          control={<Checkbox color="primary" />}
-          label="You are taking this Test alone!"
-          labelPlacement="start"
-        />
-        <FormControlLabel
-          value="bottom"
-          control={<Checkbox color="primary" />}
-          label="you are above 14yrs old? "
-          labelPlacement="bottom"
+          label="You are not a disabled person!"
+          labelPlacement="end"
         />
         <FormControlLabel
           value="end"
           control={<Checkbox color="primary" />}
-          label="You agree to share your data with us!"
+          label="Are you taking this Test alone!"
+          labelPlacement="end"
+        />
+        <FormControlLabel
+          value="end"
+          control={<Checkbox color="primary" />}
+          label="you are above 14yrs old? "
+          labelPlacement="end"
+        />
+        <FormControlLabel
+          value="end"
+          control={<Checkbox color="primary" />}
+          label="Are you agreeing to share your data with us!"
           labelPlacement="end"
         />
       </FormGroup>
