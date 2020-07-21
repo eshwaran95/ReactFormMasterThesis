@@ -20,7 +20,12 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-
+import {
+  BrowserRouter as Router,
+  
+  Route,
+  Link
+} from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -294,8 +299,19 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
           label="Not-Hazard-related "
           labelPlacement="start"
         />
+              
     </div>
       </TabPanel>
+      <Link to="/KnownHazard">
+    <button type="button">
+         Next
+    </button>
+</Link>
+<Link to="/UseEnvironment">
+     <button type="button">
+          Back
+     </button>
+ </Link>
     </div>
   );
 }

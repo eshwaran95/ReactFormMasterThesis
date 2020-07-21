@@ -18,7 +18,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-
+import {
+  BrowserRouter as Router,
+  
+  Route,
+  Link
+} from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -77,10 +82,10 @@ function createData(name, calories, fat, carbs, protein) {
 
 const rows = [
   // eslint-disable-next-line no-undef
-  createData('List one user group per line','Physician,Nurse,Technician,Laypersons'),
-  createData('Background', 'JobTitle,Age,Sex,Medical Condition'),
-  createData('Abilities','Education Required, Qualification, Knowledge, Experience With Medical Device'),
-  createData('Tasks done using Theraphy Builder','Ebook Advice,Therapist Dialog Box,MedicalContext'),
+  createData('List one user group per line','Physician','Nurse','Technician','Laypersons'),
+  createData('Background', 'JobTitle','Age','Sex','Medical Condition'),
+  createData('Abilities','Education Required', 'Qualification', 'Knowledge', 'Experience With Medical Device'),
+  createData('Tasks done using Theraphy Builder','Ebook Advice','Therapist Dialog Box','MedicalContext'),
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -247,6 +252,16 @@ export default function SimpleTabs() {
       </div>
     </div>
       </TabPanel>
+      <Link to="/UiSaftyAndPotentialError">
+    <button type="button">
+         Back
+    </button>
+</Link>
+<Link to="/ForeseeableHazard">
+     <button type="button">
+          Next
+     </button>
+ </Link>
     </div>
   );
 }

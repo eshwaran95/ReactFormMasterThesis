@@ -10,6 +10,7 @@ import TestIntroduction from './Pages/TestIntroduction';
 import UiSaftyAndPotentialError from './Pages/UiSaftyAndPotentialError';
 import UiSpecifications from './Pages/UiSpecifications';
 import UseScenario from './Pages/UseScenario';
+import SelectionOfUseScenario from './Pages/SelectionOfUseScenario';
 import UserEnvironment from './Pages/UserEnvironment';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -128,7 +129,7 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Usability Engineering
+            Usability Engineering for Theraphy Builder Application
           </Typography>
         </Toolbar>
       </AppBar>
@@ -159,27 +160,11 @@ export default function PersistentDrawerLeft() {
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/foreseeableHazards">Foreseeable Hazards</Link>
-        </ListItem>
-        <ListItem button onClick={handleClose}>
-        <NavigateNextIcon />
-        <Link to="/KnowHazard">Know Hazard</Link>
-        </ListItem>
-        <ListItem button onClick={handleClose}>
-        <NavigateNextIcon />
-        <Link to="/questionaries">Questionaries</Link>
-        </ListItem>
-        <ListItem button onClick={handleClose}>
-        <NavigateNextIcon />
         <Link to="/personaBuilder">Persona Builder</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/systemUsabilityScale">System Usability Scale</Link>
-        </ListItem>
-        <ListItem button onClick={handleClose}>
-        <NavigateNextIcon />
-        <Link to="/testIntroduction">Test Introduction</Link>
+        <Link to="/userEnvironment">User Environment</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
@@ -187,7 +172,11 @@ export default function PersistentDrawerLeft() {
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/uiSpecifications">UI Specifications</Link>
+        <Link to="/KnowHazard">Know Hazard</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/foreseeableHazards">Foreseeable Hazards</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
@@ -195,9 +184,26 @@ export default function PersistentDrawerLeft() {
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/userEnvironment">User Environment</Link>
+        <Link to="/uiSpecifications">UI Specifications</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/testIntroduction">Test Introduction</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/SelectionOfUseScenario">Selection of Use Scenario</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/questionaries">Questionaries</Link>
+        </ListItem>
+        <ListItem button onClick={handleClose}>
+        <NavigateNextIcon />
+        <Link to="/systemUsabilityScale">System Usability Scale</Link>
         </ListItem>
       </Drawer>
+
       <Switch>
         <Route path="/introduction">
           <Introduction />
@@ -222,6 +228,9 @@ export default function PersistentDrawerLeft() {
         </Route>
         <Route path="/testIntroduction">
           <TestIntroduction />
+        </Route>
+        <Route path="/SelectionOfUseScenario">
+          <SelectionOfUseScenario />
         </Route>
         <Route path="/uiSaftyAndPotentialError">
           <UiSaftyAndPotentialError />
