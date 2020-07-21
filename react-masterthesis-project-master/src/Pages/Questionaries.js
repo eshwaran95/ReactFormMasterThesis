@@ -23,7 +23,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
+import {
+  BrowserRouter as Router,
+  
+  Route,
+  Link
+} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -155,7 +160,9 @@ export default function Questionaries() {
       </TabPanel>
       <TabPanel value={value} index={2}>
      <p>drei</p>
+
       </TabPanel>
+
 
 
 
@@ -511,8 +518,19 @@ export default function Questionaries() {
         />
 </FormControl>
 </CardContent>
-</Card>
 
+
+</Card>
+<Link to="/SelectionOfUseScenario">
+    <button type="button">
+         Back
+    </button>
+</Link>
+<Link to="/SystemUsabili">
+     <button type="button">
+          Next
+     </button>
+ </Link>
 </div>
   );
 }

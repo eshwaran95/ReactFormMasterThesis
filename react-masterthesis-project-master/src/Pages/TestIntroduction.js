@@ -5,7 +5,12 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
+import {
+  BrowserRouter as Router,
+  
+  Route,
+  Link
+} from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -133,6 +138,16 @@ Try to repeat the procedure in the exact same way with each participant. That wi
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
+        <Link to="/UiSPecification">
+    <button type="button">
+         Back
+    </button>
+</Link>
+<Link to="/SelectionOfUseScenario">
+     <button type="button">
+          Next
+     </button>
+ </Link>
       </CardActions>
     </Card>
   );

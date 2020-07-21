@@ -8,12 +8,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {
-  BrowserRouter as Router,
-  
-  Route,
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
+import assets from './assets/fzi.jpg';
+
+
 
 
 const useStyles = makeStyles({
@@ -21,7 +19,7 @@ const useStyles = makeStyles({
     maxWidth: 2000,
   },
   media: {
-    height: 300,
+    paddingTop: '56.25%',
   },
 });
 
@@ -29,12 +27,13 @@ export default function Introduction() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card
+    className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://images.app.goo.gl/PQUbLN4G2UQu6ubh6"
-          title="Contemplative Reptile"
+        <CardMedia 
+      className={classes.media}
+      title="FZI logo"
+      image= {assets}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -56,7 +55,7 @@ The risk analysis for the product has shown that none of the identified use erro
         </CardContent>
       </CardActionArea>
       <CardActions>
-      <Link to="/personaBuilder">
+      <Link to="/EligibilityCriteria">
      <button type="button">
           Next
      </button>
