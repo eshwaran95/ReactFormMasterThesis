@@ -19,9 +19,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import {
-  BrowserRouter as Router,
-  
-  Route,
   Link
 } from "react-router-dom";
 
@@ -82,10 +79,10 @@ function createData(name, calories, fat, carbs, protein) {
 
 const rows = [
   // eslint-disable-next-line no-undef
-  createData('List one user group per line','Physician','Nurse','Technician','Laypersons'),
-  createData('Background', 'JobTitle','Age','Sex','Medical Condition'),
-  createData('Abilities','Education Required', 'Qualification', 'Knowledge', 'Experience With Medical Device'),
-  createData('Tasks done using Theraphy Builder','Ebook Advice','Therapist Dialog Box','MedicalContext'),
+  createData('Name of predicate device','customer complaints','Example for hazards:wrong (amount of) medication','YYYY-MM-DD'),
+  createData('', '','Examples for hazardous situations: patient receives (too high) ',''),
+  createData('','', 'Examples for use problems: user  confuses with the medication advices','' ),
+ 
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -121,7 +118,7 @@ export default function SimpleTabs() {
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Introduction to Known Hazard" {...a11yProps(0)} />
-          <Tab label="Example of a Known Hzard" {...a11yProps(1)} />
+          <Tab label="Example of a Known Hazard" {...a11yProps(1)} />
           <Tab label="Fill a Known Hazard table" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
@@ -139,7 +136,6 @@ export default function SimpleTabs() {
         <Typography variant="body2" component="p">
         List all known hazards; hazardous situations and use problems from the post-market surveillance of predicate devices, or the device after market release here or reference to an external document (e.g. “Risk table”).
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
@@ -152,10 +148,10 @@ export default function SimpleTabs() {
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Title of user group</StyledTableCell>
-            <StyledTableCell align="right">Demographic data</StyledTableCell>
-            <StyledTableCell align="right">Expected/Intended qualification,job experience, skills</StyledTableCell>
-            <StyledTableCell align="right">Anticipated tasks and their frequency (related to the medical device)</StyledTableCell>
+            <StyledTableCell>Product</StyledTableCell>
+            <StyledTableCell align="right">Source</StyledTableCell>
+            <StyledTableCell align="right">Hazards, hazardous situations, use problems</StyledTableCell>
+            <StyledTableCell align="right">Date</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -249,6 +245,9 @@ export default function SimpleTabs() {
           }}
           variant="outlined"
         />
+              <button type="button">
+         Submit
+    </button>
       </div>
     </div>
       </TabPanel>

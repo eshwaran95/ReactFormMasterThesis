@@ -84,9 +84,7 @@ function createData(name, calories, fat, carbs, protein) {
 
 const rows = [
   // eslint-disable-next-line no-undef
-  createData('Measurning Depression level','Physician,Nurse','Hospital or patients home','Device is ready for use','Welcome dialog is displayed','Switch on the device','Non-Hazard situation'),
-  
-];
+  createData('E.g.: series of display screens that the user has to navigate through','E.g.: User sets wrong theraphy ','E.g.: User oversees unit because delimiter is too small (as part of the font ','E.g.: Patient receives wrong amount of medication','E.g.: Death (SL 5: catastrophic)')];
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -106,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function SimpleTabs() {
+export default function UiSaftyAndPotentialError() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -120,9 +118,9 @@ export default function SimpleTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Introduction to Use Scenario " {...a11yProps(0)} />
-          <Tab label="Example of a Use Scenario" {...a11yProps(1)} />
-          <Tab label="Fill a Use Scenario table" {...a11yProps(2)} />
+          <Tab label="Introduction to Ui Safty and Potential Error" {...a11yProps(0)} />
+          <Tab label="Example of a Ui Safty and Potential Error" {...a11yProps(1)} />
+          <Tab label="Fill a Ui Safty and Potential Error table" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -134,14 +132,11 @@ export default function SimpleTabs() {
         <Typography variant="h5" component="h2">
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-        The purpose of personas is to create reliable and realistic representations of your key audience segments for reference. These representations should be based on qualitative and some quantitative user research and web analytics. Remember, your personas are only as good as the research behind them. Effective personas:
+        The purpose is to List all user interface characteristics related to safety and potential use errors here or reference to an external document (e.g. “Risk table”).
         </Typography>
         <Typography variant="body2" component="p">
-        Describe in the following table use scenarios for each user group. There are typically about 7 +/- 2 tasks per use scenario. Describe the pre- and post-conditions for each use scenario. You may subdivide complex tasks further into subtasks. Make sure that the tasks cover all aspects of the use scenario if applicable (e.g. task planning, task preparation, task execution, post-processing, evaluation of the results, and optionally distribution of results).
-The column “Hazard-related / not hazard-related” needs to be filled out once potential harms caused by use errors have been identified in chapter 10.
-
+         The Main Components are UI-characteristic related to safety/use errors (primary operating functions),Possible use error with respect to UI-characteristi,Root cause, Hazardous situation & Harm and severity level (SL)
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
@@ -154,13 +149,11 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Title of Use scenario</StyledTableCell>
-            <StyledTableCell align="right">User group(s)</StyledTableCell>
-            <StyledTableCell align="right">Use environment</StyledTableCell>
-            <StyledTableCell align="right">Pre-condition (Where does the task start?)</StyledTableCell>
-            <StyledTableCell align="right">Post-condition (intended outcome)</StyledTableCell>
-            <StyledTableCell align="right">Tasks</StyledTableCell>
-            <StyledTableCell align="right">Hazard-related / not hazard-related</StyledTableCell>
+            <StyledTableCell>UI-characteristic related to safety/use errors (primary operating functions)</StyledTableCell>
+            <StyledTableCell align="right">Possible use error with respect to UI-characteristic</StyledTableCell>
+            <StyledTableCell align="right">Root cause</StyledTableCell>
+            <StyledTableCell align="right">Hazardous situation</StyledTableCell>
+            <StyledTableCell align="right">Harm and severity level (SL)</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -184,41 +177,12 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <TabPanel value={value} index={2}>
       <div className={classes.root}>
       <div>
-      <TextField
-          id="standard-full-width"
-          label="ID"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Ex: 1"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-      </div>
-      <div>
-        <TextField
-          id="filled-full-width"
-          label="Title of Use Scenario"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="E.g:Measurmeng Depression level"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="filled"
-        />
-      </div>
-      <div>
         <TextField
           id="outlined-full-width"
-          label="Use Group"
+          label="UI-characteristic related to safety/use errors (primary operating functions)"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g: Physician"
+          helperText="E.g.: series of display screens that the user has to navigate through"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -230,10 +194,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="outlined-full-width"
-          label="Use Environment"
+          label="Possible use error with respect to UI-characteristic"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Patients Home"
+          helperText="E.g.: User sets wrong flow rate of infusion pump"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -245,10 +209,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="outlined-full-width"
-          label="Pre-condition (Where does the task start?)"
+          label="Root cause"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g: After launching the applicaiton"
+          helperText="E.g.: User oversees unit because delimiter is too small (as part of the font)"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -260,10 +224,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="outlined-full-width"
-          label="Post-condition (intended outcome)"
+          label="Hazardous situation"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g: Welcome page or dialog should be displaied"
+          helperText="E.g.: Patient receives wrong amount of medication"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -275,10 +239,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="outlined-full-width"
-          label="Tasks"
+          label="Harm and severity level (SL)"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g: Switching on the device "
+          helperText="E.g.: Death (SL 5: catastrophic)"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -286,19 +250,11 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
           }}
           variant="outlined"
         />
+              <button type="button">
+         Submit
+    </button>
       </div>
-      <FormControlLabel
-          value="start"
-          control={<Checkbox color="primary" />}
-          label="Hazard-related "
-          labelPlacement="start"
-        />
-              <FormControlLabel
-          value="start"
-          control={<Checkbox color="primary" />}
-          label="Not-Hazard-related "
-          labelPlacement="start"
-        />
+
               
     </div>
       </TabPanel>

@@ -140,7 +140,6 @@ export default function SimpleTabs() {
 The column “Hazard-related / not hazard-related” needs to be filled out once potential harms caused by use errors have been identified in chapter 10.
 
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
@@ -153,13 +152,13 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Title of Use scenario</StyledTableCell>
-            <StyledTableCell align="right">User group(s)</StyledTableCell>
-            <StyledTableCell align="right">Use environment</StyledTableCell>
-            <StyledTableCell align="right">Pre-condition (Where does the task start?)</StyledTableCell>
-            <StyledTableCell align="right">Post-condition (intended outcome)</StyledTableCell>
-            <StyledTableCell align="right">Tasks</StyledTableCell>
-            <StyledTableCell align="right">Hazard-related / not hazard-related</StyledTableCell>
+            <StyledTableCell>Id</StyledTableCell>
+            <StyledTableCell align="right">User group</StyledTableCell>
+            <StyledTableCell align="right">Training required</StyledTableCell>
+            <StyledTableCell align="right">Trainer</StyledTableCell>
+            <StyledTableCell align="right">Use requirement</StyledTableCell>
+            <StyledTableCell align="right">Testable technical requirements</StyledTableCell>
+            <StyledTableCell align="right">Risk control measures</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -199,10 +198,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="filled-full-width"
-          label="Title of Use Scenario"
+          label="User group"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g:Measurmeng Depression level"
+          helperText="E.g:Physician"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -214,10 +213,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="outlined-full-width"
-          label="Use Group"
+          label="Training required"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g: Physician"
+          helperText="E.g: Yes"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -229,10 +228,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="outlined-full-width"
-          label="Use Environment"
+          label="Training material"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Patients Home"
+          helperText="Ex:About Questions asked to measure Mental Illness"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -244,10 +243,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="outlined-full-width"
-          label="Pre-condition (Where does the task start?)"
+          label="Trainer"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g: After launching the applicaiton"
+          helperText="E.g: Reasercher,Developer,Physician"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -259,10 +258,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="outlined-full-width"
-          label="Post-condition (intended outcome)"
+          label="Use requirement"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g: Welcome page or dialog should be displaied"
+          helperText="E.g: The user shall recognize, if the device is switched on successfully"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -274,10 +273,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="outlined-full-width"
-          label="Tasks"
+          label="Testable technical requirements"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g: Switching on the device "
+          helperText="E.g: display color "
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -286,20 +285,37 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
           variant="outlined"
         />
       </div>
-      <FormControlLabel
-          value="start"
-          control={<Checkbox color="primary" />}
-          label="Hazard-related "
-          labelPlacement="start"
+      <div>
+        <TextField
+          id="outlined-full-width"
+          label="Risk control measures"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g:The ON-button needs to be bigger than other UI-elements   and clearly labeled"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
         />
-              <FormControlLabel
-          value="start"
-          control={<Checkbox color="primary" />}
-          label="Not-Hazard-related "
-          labelPlacement="start"
-        />
+              <button type="button">
+         Submit
+    </button>
+      </div>
+
     </div>
       </TabPanel>
+      <Link to="/TestIntroduction">
+    <button type="button">
+         Next
+    </button>
+</Link>
+<Link to="/UseSpecification">
+     <button type="button">
+          Back
+     </button>
+ </Link>
 
     </div>
   );

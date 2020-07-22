@@ -141,7 +141,6 @@ export default function SimpleTabs() {
 The column “Hazard-related / not hazard-related” needs to be filled out once potential harms caused by use errors have been identified in chapter 10.
 
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
@@ -299,7 +298,11 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
           label="Not-Hazard-related "
           labelPlacement="start"
         />
+            <button type="button">
+         Submit
+    </button>
     </div>
+
       </TabPanel>
       <Link to="/UiSaftyAndPotentialError">
     <button type="button">

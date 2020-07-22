@@ -19,12 +19,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+
 import {
-  BrowserRouter as Router,
-  
-  Route,
   Link
 } from "react-router-dom";
 
@@ -85,7 +81,7 @@ function createData(name, calories, fat, carbs, protein) {
 
 const rows = [
   // eslint-disable-next-line no-undef
-  createData('Measurning Depression level','Physician,Nurse','Hospital or patients home','Device is ready for use','Welcome dialog is displayed','Switch on the device','Non-Hazard situation'),
+  createData('Example for hazards:wrong (amount of) medication,Examples for hazardous situations: patient receives (too high),Examples for use problems: user confuses with the medication advices'),
   
 ];
 
@@ -121,28 +117,26 @@ export default function SimpleTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Introduction to Use Scenario " {...a11yProps(0)} />
-          <Tab label="Example of a Use Scenario" {...a11yProps(1)} />
-          <Tab label="Fill a Use Scenario table" {...a11yProps(2)} />
+          <Tab label="Introduction to Foreseeable hazards  " {...a11yProps(0)} />
+          <Tab label="Example of a Foreseeable hazards " {...a11yProps(1)} />
+          <Tab label="Fill a Foreseeable hazards table" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
       <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-        Use Scenarios
+        Foreseeable hazards 
         </Typography>
         <Typography variant="h5" component="h2">
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-        The purpose of personas is to create reliable and realistic representations of your key audience segments for reference. These representations should be based on qualitative and some quantitative user research and web analytics. Remember, your personas are only as good as the research behind them. Effective personas:
+        The purpose of List all foreseeable hazards and hazardous situations identified in preliminary risk analysis like for example in a preliminary hazard analysis (PHA) here or reference to an external document (e.g. “Risk table”).
         </Typography>
         <Typography variant="body2" component="p">
-        Describe in the following table use scenarios for each user group. There are typically about 7 +/- 2 tasks per use scenario. Describe the pre- and post-conditions for each use scenario. You may subdivide complex tasks further into subtasks. Make sure that the tasks cover all aspects of the use scenario if applicable (e.g. task planning, task preparation, task execution, post-processing, evaluation of the results, and optionally distribution of results).
-The column “Hazard-related / not hazard-related” needs to be filled out once potential harms caused by use errors have been identified in chapter 10.
+        Describe in the following table is listing Hazards foreseeable and hazard situation with a Priliminary Hazard Anlaysis. 
 
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
@@ -155,13 +149,8 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Title of Use scenario</StyledTableCell>
-            <StyledTableCell align="right">User group(s)</StyledTableCell>
-            <StyledTableCell align="right">Use environment</StyledTableCell>
-            <StyledTableCell align="right">Pre-condition (Where does the task start?)</StyledTableCell>
-            <StyledTableCell align="right">Post-condition (intended outcome)</StyledTableCell>
-            <StyledTableCell align="right">Tasks</StyledTableCell>
-            <StyledTableCell align="right">Hazard-related / not hazard-related</StyledTableCell>
+            <StyledTableCell>ID</StyledTableCell>
+            <StyledTableCell align="right">Hazards, hazardous situations, use errors</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -201,10 +190,10 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
       <div>
         <TextField
           id="filled-full-width"
-          label="Title of Use Scenario"
+          label="Hazards, hazardous situations, use errors"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="E.g:Measurmeng Depression level"
+          helperText="Eg:Hazards: Wrong Medication, hazardous situations: Patient recives wrong medication, Patient confuced with the Dialong flow"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -212,96 +201,14 @@ The column “Hazard-related / not hazard-related” needs to be filled out once
           }}
           variant="filled"
         />
+
       </div>
-      <div>
-        <TextField
-          id="outlined-full-width"
-          label="Use Group"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="E.g: Physician"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-      </div>
-      <div>
-        <TextField
-          id="outlined-full-width"
-          label="Use Environment"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Patients Home"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-      </div>
-      <div>
-        <TextField
-          id="outlined-full-width"
-          label="Pre-condition (Where does the task start?)"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="E.g: After launching the applicaiton"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-      </div>
-      <div>
-        <TextField
-          id="outlined-full-width"
-          label="Post-condition (intended outcome)"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="E.g: Welcome page or dialog should be displaied"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-      </div>
-      <div>
-        <TextField
-          id="outlined-full-width"
-          label="Tasks"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="E.g: Switching on the device "
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-      </div>
-      <FormControlLabel
-          value="start"
-          control={<Checkbox color="primary" />}
-          label="Hazard-related "
-          labelPlacement="start"
-        />
-              <FormControlLabel
-          value="start"
-          control={<Checkbox color="primary" />}
-          label="Not-Hazard-related "
-          labelPlacement="start"
-        />
+
     </div>
       </TabPanel>
+      <button type="button">
+         Submit
+    </button>
       <Link to="/KnowHazard">
     <button type="button">
          Back

@@ -18,10 +18,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import {
-  BrowserRouter as Router,
-  
-  Route,
+
   Link
 } from "react-router-dom";
 
@@ -82,11 +82,15 @@ function createData(name, calories, fat, carbs, protein) {
 
 const rows = [
   // eslint-disable-next-line no-undef
-  createData('List one user group per line','Physician,Nurse,Technician,Laypersons'),
-  createData('Background', 'JobTitle,Age,Sex,Medical Condition'),
-  createData('Abilities','Education Required, Qualification, Knowledge, Experience With Medical Device'),
-  createData('Tasks done using Theraphy Builder','Ebook Advice,Therapist Dialog Box,MedicalContext'),
+  createData('List Name of Use scenario','Test Scenario Name'),
+
 ];
+//const rows2 = [
+  // eslint-disable-next-line no-undef
+  //createData2('1','Unpacking device','All components are unpacked','☐ Passed ☐ Failed ☐ Close Call',''),
+  // eslint-disable-next-line no-undef
+  //createData2('2', 'Inserting batteries','Batteries are inserted correctly and battery lid is closed again.','☐ Passed ☐ Failed ☐ Close Call','Medical Condition',''),
+//];
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -120,26 +124,25 @@ export default function SimpleTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Introduction to Known Hazard" {...a11yProps(0)} />
-          <Tab label="Example of a Known Hzard" {...a11yProps(1)} />
-          <Tab label="Fill a Known Hazard table" {...a11yProps(2)} />
+          <Tab label="Introduction to Selection of Use Scenarios" {...a11yProps(0)} />
+          <Tab label="Example of a Selection of Use Scenarios" {...a11yProps(1)} />
+          <Tab label="Fill a Selection of Use Scenarios table" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
       <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-         Known Hazard
+         Selection Of Use Scenario 
         </Typography>
         <Typography variant="h5" component="h2">
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-        Hazard is 
+        List use scenarios which shall be included in usability test here.
         </Typography>
         <Typography variant="body2" component="p">
-        List all known hazards; hazardous situations and use problems from the post-market surveillance of predicate devices, or the device after market release here or reference to an external document (e.g. “Risk table”).
+        The main components here are Use Scenario-Here you need to name the use scenario and Test Scenatio-Here you need to also the respective use scenario.
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
@@ -152,10 +155,35 @@ export default function SimpleTabs() {
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Title of user group</StyledTableCell>
-            <StyledTableCell align="right">Demographic data</StyledTableCell>
-            <StyledTableCell align="right">Expected/Intended qualification,job experience, skills</StyledTableCell>
-            <StyledTableCell align="right">Anticipated tasks and their frequency (related to the medical device)</StyledTableCell>
+            <StyledTableCell>ID</StyledTableCell>
+            <StyledTableCell align="right">Use Scenario</StyledTableCell>
+            <StyledTableCell align="right">Test Scenario</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <StyledTableRow key={row.name}>
+              <StyledTableCell component="th" scope="row">
+                {row.name}
+              </StyledTableCell>
+              <StyledTableCell align="right">{row.calories}</StyledTableCell>
+              <StyledTableCell align="right">{row.fat}</StyledTableCell>
+              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+            </StyledTableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>ID</StyledTableCell>
+            <StyledTableCell align="right">Tasks</StyledTableCell>
+            <StyledTableCell align="right">Pass/Fail Criteria</StyledTableCell>
+            <StyledTableCell align="right">Passed, Failed, Close Call</StyledTableCell>
+            <StyledTableCell align="right">Comments</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -193,10 +221,10 @@ export default function SimpleTabs() {
       <div>
         <TextField
           id="filled-full-width"
-          label="Product"
+          label="Use Scenario	"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Theraphy Builder"
+          helperText="Name "
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -208,10 +236,10 @@ export default function SimpleTabs() {
       <div>
         <TextField
           id="outlined-full-width"
-          label="Source"
+          label="Test Scenario"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Ex: Customer Complaints!"
+          helperText="Name"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -223,10 +251,10 @@ export default function SimpleTabs() {
       <div>
         <TextField
           id="outlined-full-width"
-          label="Hazards, hazardous situations, use problems"
+          label="Tasks"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Ex:Hazard-Amount of Medication & Hazard Situation: Too high dose"
+          helperText="Switch on the device"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -238,10 +266,10 @@ export default function SimpleTabs() {
       <div>
         <TextField
           id="outlined-full-width"
-          label="Date"
+          label="Comments"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Ex:2020-05-01"
+          helperText="Switched on-launched sucessfully"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -249,6 +277,43 @@ export default function SimpleTabs() {
           }}
           variant="outlined"
         />
+              <FormControlLabel
+          value="start"
+          control={<Checkbox color="primary" />}
+          label="Task-Passed  "
+          labelPlacement="start"
+        />
+              <FormControlLabel
+          value="start"
+          control={<Checkbox color="primary" />}
+          label="Task-Failed "
+          labelPlacement="start"
+        />
+         <FormControlLabel
+          value="start"
+          control={<Checkbox color="primary" />}
+          label="Task-Close Call "
+          labelPlacement="start"
+        />
+        <div>
+        <TextField
+          id="outlined-full-width"
+          label="Comments"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="Something you want to add"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
+        />
+                <button type="button">
+         Submit
+    </button>
+        </div>
+
       </div>
     </div>
       </TabPanel>

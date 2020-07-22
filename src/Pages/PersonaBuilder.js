@@ -140,7 +140,7 @@ Give a clear picture of the user's expectations and how they're likely to use th
 Aid in uncovering universal features and functionality
 Describe real people with backgrounds, goals, and values
           <br />
-          {'"a benevolent smile"'}
+
         </Typography>
       </CardContent>
       <CardActions>
@@ -239,18 +239,9 @@ Describe real people with backgrounds, goals, and values
             shrink: true,
           }}
         />
-        <TextField
-          id="standard-full-width"
-          label="Title of user group"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Full width!"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />    
+      <button type="button">
+         Submit
+    </button>   
       </div>
     </div>
       </TabPanel>

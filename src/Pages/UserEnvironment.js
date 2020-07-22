@@ -139,7 +139,7 @@ export default function UserEnvironment() {
         <Typography variant="body2" component="p">
 Some of the main factors of the Use Environment are Lighting,Sound or noise,Social environment like family or colleagues,Medium of intraction example: Gloves,goggles etc,Furnishing example sofa or work table,Distraction like TV or other Medical device, and finally Other Sterile environment.
           <br />
-          {'"a benevolent smile"'}
+
         </Typography>
       </CardContent>
       <CardActions>
@@ -178,12 +178,24 @@ Some of the main factors of the Use Environment are Lighting,Sound or noise,Soci
       <TabPanel value={value} index={2}>
       <div className={classes.root}>
       <div>
+      <TextField
+          id="standard-full-width"
+          label="Use Environment"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g:Hospital, Clinic, Ward"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
         <TextField
           id="standard-full-width"
-          label="Label"
+          label="Lighting"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="E.g.:; Dim light"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -191,111 +203,96 @@ Some of the main factors of the Use Environment are Lighting,Sound or noise,Soci
           }}
         />
         <TextField
-          label="None"
-          id="margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-        />
-        <TextField
-          label="Dense"
-          id="margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-        />
-        <TextField
-          label="Normal"
-          id="margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
+          id="standard-full-width"
+          label="Sound/Noise (ambient and intermittent)"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g.:; Quiet"
+          fullWidth
           margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
         />
       </div>
       <div>
-        <TextField
-          id="filled-full-width"
-          label="Label"
+      <TextField
+          id="standard-full-width"
+          label="Climate"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="E.g.:; Temperature; Humidity; …"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
-          variant="filled"
         />
         <TextField
-          label="None"
-          id="filled-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="filled"
-        />
-        <TextField
-          label="Dense"
-          id="filled-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="filled"
-        />
-        <TextField
-          label="Normal"
-          id="filled-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
-          variant="filled"
-        />
-      </div>
-      <div>
-        <TextField
-          id="outlined-full-width"
-          label="Label"
+          id="standard-full-width"
+          label="Social environment, social interactions, work organization of user group"
           style={{ margin: 8 }}
           placeholder="Placeholder"
-          helperText="Full width!"
+          helperText="E.g.:; Family members are around"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
-          variant="outlined"
-        />
-        <TextField
-          label="None"
-          id="outlined-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="outlined"
-        />
-        <TextField
-          label="Dense"
-          id="outlined-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="outlined"
-        />
-        <TextField
-          label="Normal"
-          id="outlined-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
+        /> 
+                <TextField
+          id="standard-full-width"
+          label="Typical equipment used (in conjunction with the medical device)"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g:Monitoring screen; Gloves; Eye protection"
+          fullWidth
           margin="normal"
-          variant="outlined"
+          InputLabelProps={{
+            shrink: true,
+          }}
         />
+                <TextField
+          id="standard-full-width"
+          label="Furnishing"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g.:; Sofa; Table"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+                <TextField
+          id="standard-full-width"
+          label="Distractions and interruptions"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="TV;Friend; Other medical devices"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+                <TextField
+          id="standard-full-width"
+          label="Other"
+          style={{ margin: 8 }}
+          placeholder="Placeholder"
+          helperText="E.g.:; Sterile environment"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+        
       </div>
+      <button type="button">
+         Submit
+    </button>
     </div>
       </TabPanel>
       <Link to="/UiSaftyAndPotentialError">
