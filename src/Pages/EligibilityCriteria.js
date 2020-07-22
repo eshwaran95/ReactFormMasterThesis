@@ -63,8 +63,12 @@ export default function FormControlLabelPosition() {
           label="Are you agreeing to share your data with us!"
           labelPlacement="end"
         />
+        
       </FormGroup>
     </FormControl>
+    <button type="button">
+         Submit
+    </button>
     </CardContent>
      <CardActions>
      <Link to="/personaBuilder">
