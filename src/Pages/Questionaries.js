@@ -15,13 +15,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import {  makeStyles } from '@material-ui/core/styles';
+
 import Paper from '@material-ui/core/Paper';
 import {
   BrowserRouter as Router,
@@ -101,35 +96,9 @@ function a11yProps(index) {
   };
 }
 
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell);
 
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.action.hover,
-    },
-  },
-}))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  // eslint-disable-next-line no-undef
-  createData('List one user group per line','Physician,Nurse,Technician,Laypersons'),
-  createData('Background', 'JobTitle,Age,Sex,Medical Condition'),
-  createData('Abilities','Education Required, Qualification, Knowledge, Experience With Medical Device'),
-  createData('Tasks done using Theraphy Builder','Ebook Advice,Therapist Dialog Box,MedicalContext'),
-];
 
 
 
@@ -153,21 +122,195 @@ export default function Questionaries() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-      <p>eins</p>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-      <p>zwei</p>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-     <p>drei</p>
+      <p>
+      <Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="• What does your typical weekday look like?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Daily activities-Office,Travel,lunch..."
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card>
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="• What does your typical weekday look like?
 
-      </TabPanel>
+          "
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Morning -Time,Evening-Time...."
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card> 
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="What are some of the apps and websites you use the most?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Name of apps-Ex:Gaming apps,Health Apps,TravelApp..."
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card> 
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="• Tell me about your role at your company?
+
+          "
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Title:Engieer,Manager,Superviser..."
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card> 
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="Any lifestyle questions that are related to your topic / product.?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Open Question"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card> 
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="How old are you?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Age"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card> 
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="How old are you?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Age"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card> 
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="How old are you?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Age"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card> 
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="How old are you?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Age"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card>   
 
 
+</p>
+<button type="button">
+         Submit
+    </button>
+<button type="button">
+         Next Section
+    </button>
+ </TabPanel>
 
-
-
-
+<TabPanel value={value} index={1}>
+<p>
 <Card className={classes.root}>
 <CardContent> 
 <FormControl component="fieldset">
@@ -181,12 +324,24 @@ export default function Questionaries() {
 </FormControl>
 </CardContent>
 </Card>
-
+<Card className={classes.root}>
+<CardContent> 
+<FormControl component="fieldset">
+      <FormLabel component="legend">How is the Dialog Flow? </FormLabel>
+      <RadioGroup aria-label="Rating1" name="Rate 1" value={value} onChange={handleChange}>
+        <FormControlLabel value="Good" control={<Radio />} label="Good" />
+        <FormControlLabel value="Bad" control={<Radio />} label="Bad" />
+        <FormControlLabel value="Could Improve" control={<Radio />} label="Could improve" />
+        <FormControlLabel value="No idea"  control={<Radio />} label="No idea" />
+      </RadioGroup>
+</FormControl>
+</CardContent>
+</Card>
 <Card className={classes.root}>
 <CardContent>
   
 <FormControl component="fieldset">
-      <FormLabel component="legend">How do you rate the Dialog flow?</FormLabel>
+      <FormLabel component="legend">How do you rate the Medical Advice?</FormLabel>
       <RadioGroup aria-label="Rate" name="Rate 2" value={value} onChange={handleChange}>
         <FormControlLabel value="Good" control={<Radio />} label="Good" />
         <FormControlLabel value="Bad" control={<Radio />} label="Bad" />
@@ -203,10 +358,68 @@ export default function Questionaries() {
 <FormControl component="fieldset">
 <TextField
           id="standard-full-width"
-          label="Did you find the app to be sufficient in supporting you to reduce depressive symptoms?"
+          label="• What’s your relationship like with Activities and Things "
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="[topic … e.g. money, ﬁtness, etc]"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card>
+
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="Have you worked with similar devices from competitor products?"
           style={{ margin: 8 }}
           placeholder="User input"
           helperText="yes/No/Eloborate Answer!"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card>
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="If you could change or improve such devices, what would be the top 3 things you would change?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Design/Colour/Medical Context/DialogFlow!"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card>
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="• What’s the hardest part about using this product?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Design/Colour/Medical Context/DialogFlow!"
           fullWidth
           margin="Open Question"
           InputLabelProps={{
@@ -516,14 +729,159 @@ export default function Questionaries() {
             shrink: true,
           }}
         />
-        <button type="button">
-         Submit
-    </button>
+
 </FormControl>
 </CardContent>
 
-
 </Card>
+
+</p>
+<button type="button">
+         Submit
+    </button>
+<button type="button">
+         Final Post Interview Section
+    </button>
+
+</TabPanel>
+
+<TabPanel value={value} index={2}>
+     <p>
+     <Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+      <FormLabel component="legend">How do you rate the Main  Questionaries Section </FormLabel>
+      <RadioGroup aria-label="Rate" name="Rate 2" value={value} onChange={handleChange}>
+        <FormControlLabel value="Good" control={<Radio />} label="Good" />
+        <FormControlLabel value="Bad" control={<Radio />} label="Bad" />
+        <FormControlLabel value="Could Improve" control={<Radio />} label="Could improve" />
+        <FormControlLabel value="No idea" control={<Radio />} label="No idea" />
+      </RadioGroup>
+</FormControl>
+</CardContent>
+</Card>
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+      <FormLabel component="legend">How do you rate the Pre interview Questions Section? </FormLabel>
+      <RadioGroup aria-label="Rate" name="Rate 2" value={value} onChange={handleChange}>
+        <FormControlLabel value="Good" control={<Radio />} label="Good" />
+        <FormControlLabel value="Bad" control={<Radio />} label="Bad" />
+        <FormControlLabel value="Could Improve" control={<Radio />} label="Could improve" />
+        <FormControlLabel value="No idea" control={<Radio />} label="No idea" />
+      </RadioGroup>
+</FormControl>
+</CardContent>
+</Card>
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+      <FormLabel component="legend">How do you rate the Relevence in the past two Section? </FormLabel>
+      <RadioGroup aria-label="Rate" name="Rate 2" value={value} onChange={handleChange}>
+        <FormControlLabel value="Good" control={<Radio />} label="Good" />
+        <FormControlLabel value="Bad" control={<Radio />} label="Bad" />
+        <FormControlLabel value="Could Improve" control={<Radio />} label="Could improve" />
+        <FormControlLabel value="No idea" control={<Radio />} label="No idea" />
+      </RadioGroup>
+</FormControl>
+</CardContent>
+</Card>
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+      <FormLabel component="legend">How do you rate asking personal questions? </FormLabel>
+      <RadioGroup aria-label="Rate" name="Rate 2" value={value} onChange={handleChange}>
+        <FormControlLabel value="Good" control={<Radio />} label="Good" />
+        <FormControlLabel value="Bad" control={<Radio />} label="Bad" />
+        <FormControlLabel value="Could Improve" control={<Radio />} label="Could improve" />
+        <FormControlLabel value="No idea" control={<Radio />} label="No idea" />
+      </RadioGroup>
+</FormControl>
+</CardContent>
+</Card>
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+      <FormLabel component="legend">Is the Questions in the past two sections were clear to you? </FormLabel>
+      <RadioGroup aria-label="Rate" name="Rate 2" value={value} onChange={handleChange}>
+        <FormControlLabel value="Good" control={<Radio />} label="Yes" />
+        <FormControlLabel value="Bad" control={<Radio />} label="NO" />
+        <FormControlLabel value="Could Improve" control={<Radio />} label="Could improve" />
+        <FormControlLabel value="No idea" control={<Radio />} label="No idea" />
+      </RadioGroup>
+</FormControl>
+</CardContent>
+</Card>
+<Card className={classes.root}>
+<CardContent>
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="Can you help Us in answering what perticular part we need to improve?"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="Mention any thing which you felt not good or needs improvement"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card>
+
+<Card className={classes.root}>
+<CardContent>
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="Where you comfortable with the personal questions!"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="yes/No/Eloborate Answer!"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card>
+<Card className={classes.root}>
+<CardContent>
+  
+<FormControl component="fieldset">
+<TextField
+          id="standard-full-width"
+          label="Was the questions friendly and casual to you"
+          style={{ margin: 8 }}
+          placeholder="User input"
+          helperText="yes/No/Eloborate Answer!"
+          fullWidth
+          margin="Open Question"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+</FormControl>
+</CardContent>
+</Card>
+
+     </p>
+     <button type="button">
+         Submit
+    </button>
+      </TabPanel>
+
+
+
 <Link to="/SelectionOfUseScenario">
     <button type="button">
          Back
