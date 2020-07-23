@@ -144,7 +144,11 @@ export default function SystemUsabilityScale() {
           getLabelText={(value) => customIcons[value].label}
           IconContainerComponent={IconContainer}
         />
+              <button type="button">
+         Submit
+    </button>
       </Box>
+
       <Link to="/Quesstionaries">
     <button type="button">
          Back

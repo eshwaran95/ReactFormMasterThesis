@@ -133,7 +133,6 @@ When the user has completed all the questions, provide the promised compensation
 Try to repeat the procedure in the exact same way with each participant. That will reduce the likelihood of bias in the research.
 
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
