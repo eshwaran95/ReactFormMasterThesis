@@ -145,7 +145,7 @@ export default function Questionaries() {
   return (
     
 <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{zIndex: "0"}}>
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Pre-session interview" {...a11yProps(0)} />
           <Tab label="Questions" {...a11yProps(1)} />
