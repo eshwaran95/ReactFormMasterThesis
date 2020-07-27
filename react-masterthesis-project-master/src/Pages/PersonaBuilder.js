@@ -18,9 +18,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-import {
-  Link
-} from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -99,7 +96,12 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     width: '25ch',
-  }
+  },
+  buttonStyle: {
+    margin: '0 auto',
+    backgroundColor: '#007348d4',
+    color: 'white'
+  },
 
 }));
 
@@ -115,7 +117,7 @@ export default function PersonaBuilder() {
   return (
     
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{zIndex: "0"}}>
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Introduction to Persona" {...a11yProps(0)} />
           <Tab label="Example of a Persona" {...a11yProps(1)} />
@@ -125,37 +127,31 @@ export default function PersonaBuilder() {
       <TabPanel value={value} index={0}>
       <Card className={classes.root}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-        Personas
+        <Typography variant="h5"  component="h2" style={{padding: '20px'}}>Personas</Typography>
+        <Typography variant="body1" component="p">
+        The purpose of personas is to create reliable and 
+        realistic representations of your key audience 
+        segments for reference. These representations 
+        should be based on qualitative and some 
+        quantitative user research and web analytics. 
+        Remember, your personas are only as good 
+        as the research behind them. Effective personas:
         </Typography>
-        <Typography variant="h5" component="h2">
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-        The purpose of personas is to create reliable and realistic representations of your key audience segments for reference. These representations should be based on qualitative and some quantitative user research and web analytics. Remember, your personas are only as good as the research behind them. Effective personas:
-        </Typography>
-        <Typography variant="body2" component="p">
-Represent a major user group for your website/applicaiton
-Express and focus on the major needs and expectations of the most important user groups
-Give a clear picture of the user's expectations and how they're likely to use the site
-Aid in uncovering universal features and functionality
-Describe real people with backgrounds, goals, and values
-          <br />
-          {'"a benevolent smile"'}
+        <Typography variant="body1" component='p'>
+          <ul style={{padding: '20px'}}>
+            <li>Represent a major user group for your website/application</li>
+            <li>Express and focus on the major needs and expectations of the most important user groups</li>
+            <li>Give a clear picture of the user's expectations and how they're likely to use the site</li>
+            <li>Aid in uncovering universal features and functionality</li>
+            <li> Describe real people with backgrounds, goals, and values</li>
+          </ul>
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions style={{width: '100%'}}>
 
-        <Link to="/EligibilityCriteria">
-     <button type="button">
-          Back
-     </button>
- </Link>
-        <Button size="small">Learn More</Button>
-        <Link to="/UseEnvironment">
-     <button type="button">
-          Next
-     </button>
- </Link>
+          <Button className={classes.buttonStyle} href="/EligibilityCriteria">Back</Button>
+        <Button className={classes.buttonStyle}>Learn More</Button>
+        <Button href="/UserEnvironment" className={classes.buttonStyle}>Next</Button>
       </CardActions>
     </Card>
       </TabPanel>
@@ -189,68 +185,78 @@ Describe real people with backgrounds, goals, and values
       <TabPanel value={value} index={2}>
       <div className={classes.root}>
       <div>
-        <TextField
-          id="standard-full-width"
+      <TextField
+          id="outlined-full-width"
           label="Title of user group"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Nurse,Physician,Professors"
+          placeholder="e.g. Student"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
+          variant='outlined'
+        />    
+        <TextField
+          id="standard-full-width"
+          label="Demographic data"
+          placeholder="Job"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant='outlined'
         />
         <TextField
           id="standard-full-width"
           label="Demographic data"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="E.g:Job Title,Sex,Age"
+          placeholder="Gender"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
+          variant='outlined'
         />
         <TextField
           id="standard-full-width"
-          label="Expected/Intended qualification,job experience, skills"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
+          label="Demographic data"
+          placeholder="Age"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant='outlined'
+        />
+        <TextField
+          id="standard-full-width"
+          label="Expected experience and/or skills"
+          placeholder="Skills"
           helperText="Knowledge for using the App"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
+          variant='outlined'
         />
       </div>
       <div>
       <TextField
           id="standard-full-width"
-          label="Anticipated tasks and their frequency (related to the medical device)"
-          style={{ margin: 8 }}
+          label="Anticipated tasks"
           placeholder="Placeholder"
-          helperText="E.g:Turn on the app OR Any Action with Theraphy Builder"
+          helperText="Any interaction with Theraphy Builder e.g. turn on the app, behaviour etc."
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
+          variant='outlined'
         />
-        <TextField
-          id="standard-full-width"
-          label="Title of user group"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Full width!"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />    
+
+        <Button>Submit</Button>
       </div>
     </div>
       </TabPanel>

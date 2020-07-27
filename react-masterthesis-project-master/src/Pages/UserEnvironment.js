@@ -118,7 +118,7 @@ export default function UserEnvironment() {
   return (
     
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{zIndex: "0"}}>
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Introduction to Use Environment" {...a11yProps(0)} />
           <Tab label="Example of a Use Environment" {...a11yProps(1)} />

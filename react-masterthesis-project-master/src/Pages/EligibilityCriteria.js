@@ -7,11 +7,10 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import CardActions from '@material-ui/core/CardActions';
-import {
-  Link
-} from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -26,7 +25,12 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     width: '25ch',
-  }
+  },
+  buttonStyle: {
+    margin: '0 auto',
+    backgroundColor: '#007348d4',
+    color: 'white'
+  },
 
 }));
 
@@ -35,49 +39,44 @@ export default function FormControlLabelPosition() {
   return (
     <div className={classes.root}>
     <Card className={classes.root}>
-    <CardContent>
+    <CardContent style={{padding: '30px'}}>
     <FormControl component="fieldset">
-      <FormLabel component="legend">Eligilibity Criteria </FormLabel>
-      <FormGroup aria-label="position" row>
+    <Typography variant="h5"  component="h2" style={{padding: '20px'}}>Eligibility Criteria</Typography>
+          <FormGroup aria-label="position" >
         <FormControlLabel
           value="end"
           control={<Checkbox color="primary" />}
-          label="You are not a disabled person!"
+          label="You are not a disabled person?"
           labelPlacement="end"
         />
         <FormControlLabel
           value="end"
           control={<Checkbox color="primary" />}
-          label="Are you taking this Test alone!"
+          label="Are you taking this Test alone?"
           labelPlacement="end"
         />
         <FormControlLabel
           value="end"
           control={<Checkbox color="primary" />}
-          label="you are above 14yrs old? "
+          label="Are you above 14 years old? "
           labelPlacement="end"
         />
         <FormControlLabel
           value="end"
           control={<Checkbox color="primary" />}
-          label="Are you agreeing to share your data with us!"
+          label="Do you agree to share your data with us for statistical research purposes?"
           labelPlacement="end"
         />
       </FormGroup>
     </FormControl>
     </CardContent>
-     <CardActions>
-     <Link to="/personaBuilder">
-    <button type="button">
-         Next
-    </button>
-</Link>
-<Link to="/Introduction">
-     <button type="button">
-          Back
-     </button>
- </Link>
- </CardActions>
+ <CardActions style={{width: '100%'}}>
+
+<Button className={classes.buttonStyle} href="/Introduction">Back</Button>
+<Button className={classes.buttonStyle}>Learn More</Button>
+<Button href="/personaBuilder" className={classes.buttonStyle}>Next</Button>
+</CardActions>
+
     </Card>
     </div>
   );

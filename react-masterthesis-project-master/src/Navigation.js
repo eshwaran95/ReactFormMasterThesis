@@ -31,13 +31,24 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import assets from './Pages/assets/fzi_logo.jpg';
 
 const drawerWidth = 240;
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
   },
+  link:{
+    textDecoration: 'none',
+    color: 'black',
+    fontSize: '18px',
+    fontWeight: '500',
+    padding: '5px',
+    "&:hover": {
+      textDecoration: 'none',
+      color: 'black',
+    }},
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -128,13 +139,18 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <div>
+             <img style={{height:'3vw', borderRadius: '5px'}} src={assets} alt="fzi logo" />
+          </div>
+          <Typography style={{paddingLeft: '25px'}} variant="h6" noWrap>
             Usability Engineering for Theraphy Builder Application
           </Typography>
+          
         </Toolbar>
       </AppBar>
       <Router>
       <Drawer
+        style={{zIndex: '+1'}}
         className={classes.drawer}
         variant="persistent"
         anchor="left"
@@ -152,55 +168,55 @@ export default function PersistentDrawerLeft() {
      
         <ListItem button onClick={handleClose}>
           <NavigateNextIcon />
-        <Link to="/introduction">Introduction</Link>
+        <Link className={classes.link} to="/introduction">Introduction</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/eligibilityCriteria">Eligibility Criteria</Link>
+        <Link className={classes.link} to="/eligibilityCriteria">Eligibility Criteria</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/personaBuilder">Persona Builder</Link>
+        <Link className={classes.link} to="/personaBuilder">Persona Builder</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/userEnvironment">User Environment</Link>
+        <Link className={classes.link} to="/userEnvironment">User Environment</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/uiSaftyAndPotentialError">UI Safty and Potential Error</Link>
+        <Link className={classes.link} to="/uiSaftyAndPotentialError">UI Safty and Potential Error</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/KnowHazard">Know Hazard</Link>
+        <Link className={classes.link} to="/KnowHazard">Know Hazard</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/foreseeableHazards">Foreseeable Hazards</Link>
+        <Link className={classes.link} to="/foreseeableHazards">Foreseeable Hazards</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/useScenario">Use Scenario</Link>
+        <Link className={classes.link} to="/useScenario">Use Scenario</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/uiSpecifications">UI Specifications</Link>
+        <Link className={classes.link} to="/uiSpecifications">UI Specifications</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/testIntroduction">Test Introduction</Link>
+        <Link className={classes.link} to="/testIntroduction">Test Introduction</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/SelectionOfUseScenario">Selection of Use Scenario</Link>
+        <Link className={classes.link} to="/SelectionOfUseScenario">Selection of Use Scenario</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/questionaries">Questionaries</Link>
+        <Link className={classes.link} to="/questionaries">Questionaries</Link>
         </ListItem>
         <ListItem button onClick={handleClose}>
         <NavigateNextIcon />
-        <Link to="/systemUsabilityScale">System Usability Scale</Link>
+        <Link className={classes.link} to="/systemUsabilityScale">System Usability Scale</Link>
         </ListItem>
       </Drawer>
 
@@ -246,16 +262,6 @@ export default function PersistentDrawerLeft() {
         </Route>
           </Switch>
           </Router>
-
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
-        
-      </main>
-
     </div>
   );
 }
